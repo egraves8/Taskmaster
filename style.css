@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.5em;
+}
+
+#title {
+    color: rgb(255, 255, 255);
+    /*
+    background: linear-gradient(135deg, red, rgb(8, 8, 124), black);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    */
+}
+#showcase {
+    background-image: url('images/pexels-designecologist-1779487.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+}
+
