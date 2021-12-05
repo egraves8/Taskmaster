@@ -11,6 +11,24 @@
     </div>
 </div>
 
+ <div class="container" style="color:black">
+    <form method="get" action="signup.php" >
+      <div class="form-group">
+        <label>Task:</label>
+        <!-- <input type="text" name="case_label" id="task"/> -->
+        <select name="case_label">
+          <option value="insert">insert</option>
+          <option value="update">update</option>
+          <option value="delete">delete</option>
+          <option value="down dir">down dir</option>
+          <option value="nonexist label">nonexist label</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Send" />
+      </div>
+    </form>
+  </div>
 </body>
 </html>
 <?php require 'showUserTable.php'; ?>
