@@ -6,7 +6,7 @@
 <div id="about" class="container-fluid">
     <div class="row">
         <div class="col-sm-8">
-            <h1 style="color:#ff0000">welcome to IS218 party!</h1>
+            <h1 style="color:#ff0000">welcome to IS218 party!!</h1>
         </div>
     </div>
 </div>
