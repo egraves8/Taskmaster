@@ -8,9 +8,9 @@ $run_q = new run_SQL();
 $results = $run_q->runQuery($sql, $conn);
 if(count($results) > 0)
 {
-	echo "<table border=\"1\"><tr><th>ID</th><th>CategoryID</th><th>productCode</th><th>productName</th><th>listPrice</th></tr>";
+	echo "<table border=\"1\"><tr><th>ID</th><th>id</th><th>fname</th><th>lname</th><th>pass</th><th>email</th><th>reg_date</th></tr>";
 	foreach ($results as $row) {
-		echo "<tr><td>".$row["productID"]."</td><td>".$row["categoryID"]."</td><td>".$row["productCode"]."</td><td>".$row["productName"]."</td><td>".$row["listPrice"]."</td></tr>";
+		echo "<tr><td>".$row["id"]."</td><td>".$row["fname"]."</td><td>".$row["lname"]."</td><td>".$row["pass"]."</td><td>".$row["email"]."<tr><td>".$row["reg_date"]"</td></tr>";
 	}
 	
 }else{
