@@ -10,6 +10,7 @@ body{
 
 #title {
     color: rgb(255, 255, 255);
+    font-size: 1.75em;
     /*
     background: linear-gradient(135deg, red, rgb(8, 8, 124), black);
     background-clip: text;
@@ -21,9 +22,11 @@ body{
     background-size: cover;
     background-position: center;
     height: 100vh;
+    /*
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
     align-items: center;
+    */
 }
 
