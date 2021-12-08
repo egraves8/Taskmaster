@@ -1,4 +1,5 @@
 <?php
+/*
 require "db.php" ;
 
 $mode = $_GET["case_label"];
@@ -12,5 +13,5 @@ switch ($mode) {
 		header("Location: index.php");
 		break;
 }
-
+*/
 ?>

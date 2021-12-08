@@ -1,4 +1,6 @@
+
 <?php
+/*
 require 'db.php' ;
 private $hostname = "sql2.njit.edu";
 private $username = "gnb5";
@@ -30,4 +32,5 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+*/
 ?>

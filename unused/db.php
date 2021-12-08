@@ -1,4 +1,5 @@
 <?php
+/*
 class report_error{
 	function http_error($message)
 	{
@@ -44,5 +45,5 @@ class run_SQL{
 }
 
 
-
+*/
 ?>

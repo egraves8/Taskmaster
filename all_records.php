@@ -18,7 +18,7 @@
 
 <?php
 
-include "db_conn.php"; // Using database connection file here
+include "db_conn2.php"; // Using database connection file here
 
 $records = mysqli_query($db,"select * from MyGuests"); // fetch data from database
 

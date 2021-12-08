@@ -1,4 +1,5 @@
 <?php
+/*
 require 'db.php' ;
 $sql = "select id, fname,lname, pass, email, reg_date from users";
 $db = new connection_db();
@@ -16,4 +17,5 @@ if(count($results) > 0)
 }else{
     echo '0 results';
 }
+*/
 ?>
