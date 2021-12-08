@@ -1,6 +1,6 @@
 <?php
-/*
-$db = mysqli_connect("sql2.njit.edu","gnb5", "Hf8627001625$$","gnb5");
+
+$db = mysqli_connect("sql1.njit.edu","gnb5", "Hf8627001625$$","gnb5");
 
 if(!$db)
 {
@@ -10,5 +10,5 @@ else
 {
     echo "Connection Successfull";
 }
-*/
+
 ?>

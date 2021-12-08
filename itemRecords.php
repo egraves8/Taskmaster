@@ -18,20 +18,20 @@
 
 <?php
 
-include "db_conn.php"; // Using database connection file here
+include "db_conn2.php"; // Using database connection file here
 
-$records = mysqli_query($db,"select * from MyGuests"); // fetch data from database
+$records = mysqli_query($db,"select * from items"); // fetch data from database
 
 while($data = mysqli_fetch_array($records))
 {
 ?>
   <tr>
     <td><?php echo $data['id']; ?></td>
-    <td><?php echo $data['firstname']; ?></td>
-    <td><?php echo $data['lastname']; ?></td>
-    <td><?php echo $data['email']; ?></td>
-    <td><?php echo $data['reg_date']; ?></td>
-  </tr>	
+    <td><?php echo $data['itemName']; ?></td>
+    <td><?php echo $data['user']; ?></td>
+    <td><?php echo $data['done']; ?></td>
+    <td><?php echo $data['created']; ?></td>
+  </tr>
 <?php
 }
 ?>
