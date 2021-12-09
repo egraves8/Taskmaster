@@ -1,3 +1,8 @@
+<?php
+include "db_conn2.php"; // Using database connection file here
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -15,20 +20,39 @@
     <body>
         <div class="list">
             <h1 class="header">To do.</h1>
+
             <ul class="items">
                 <li>
-                    <span class="item done">Pick up Shopping</span>
-                    <a href="#" class="done-button">Mark as Done</a>
+                            <?php
+
+                            $records = mysqli_query($db,"select * from items"); // fetch data from database
+
+                            while($data = mysqli_fetch_array($records))
+                            {
+                            ?>
+                                <li>
+                                <td><?php echo $data['itemName']; ?></td>
+                                 <a href="#" class="done-button">Mark as Done</a>
+                                 </li>
+                            <?php
+                            }
+                            ?>
                 </li>
+
 
                 <li>
                     <span class="item done">Learn php</span></li>
+
             </ul>
 
             <form class="item-add" action="add.php" method="post">
                 <input type="text" name="name" placeholder="Type a new item here." class="input" autocomplete="off" required>
                 <input type="submit" value="Add" class="submit">
 
+
             </form>
+        </div>
     </body>
 </html>
+<?php mysqli_close($db); // Close connection ?>
+
