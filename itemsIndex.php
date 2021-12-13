@@ -27,29 +27,74 @@ include "db_conn2.php"; // Using database connection file here
 
                             $records = mysqli_query($db,"select * from items"); // fetch data from database
 
+
                             while($data = mysqli_fetch_array($records))
                             {
+                            //if() if statement about if items are checked or not (completed)
+                            if ($data["done"] == 0) {
                             ?>
-                            if()
                                 <li>
                                 <td><?php echo $data['itemName']; ?></td>
                                 <?php echo $data['duedate']; ?>
-                                  <td><a href="edit.php?id=<?php echo $data['id']; ?>">Edit</a></td>
-                                  <td><a href="delete.php?id=<?php echo $data['itemName']; ?>">Delete</a></td>
-                                   <input type="checkbox" id="done" name="done" value="1" />
+                                <?php echo $data["done"]; ?>
+                                <?php echo $data["urgency"]; ?>
+                                <td><a href="edit.php?id=<?php echo $data['id']; ?>">Edit</a></td>
+                                <td><a href="delete.php?id=<?php echo $data['itemName']; ?>">Delete</a></td>
+                                <label for="done">Done:</label>
+                                <input type="checkbox" id="done" name="done" value="1" />
+
+
+                           <?php // These were the lines to diplay how much time was left from due date
+                           //echo $interval = $data['duedate']->diff($now); ?>
+                            <?php //echo $interval->format("%a days, %h hours, %i minutes, %s seconds"); ?>
+
+
 
                                 </li>
 
-                            <?php
+
+                            <?php }
                             }
                             ?>
+
+
                 </li>
+                  <h1 class="header">Done Tasks</h1>
+
+                   <?php
+
+                                              $records = mysqli_query($db,"select * from items"); // fetch data from database
+                                              $counter = 0;
 
 
-                <li>
-                    <span class="item done">Learn php</span></li>
 
+                                              while($data = mysqli_fetch_array($records))
+                                              {
+                                              //if() if statement about if items are checked or not (completed)
+                                              if ($data["done"] == 1) {
+                                              ?>
+                                              <?php $counter++; ?>
+
+                                                  <li>
+                                                  <td><?php echo $data['itemName']; ?></td>
+                                                  <?php echo $data['duedate']; ?>
+                                                  <?php echo $data["done"]; ?>
+                                                  <td><a href="edit.php?id=<?php echo $data['id']; ?>">Edit</a></td>
+                                                  <td><a href="delete.php?id=<?php echo $data['itemName']; ?>">Delete</a></td>
+                                                   <label for="done">Done:</label>
+                                                              <input type="checkbox" id="done" name="done" value="1" />
+                                                  </li>
+
+                                              <?php
+                                              }
+
+                                              }
+
+                                               echo "STATISTICS: Number of DONE tasks:";
+                                               echo $counter;
+                                              ?>
             </ul>
+             <h1 class="header">Add Task</h1>
 
             <form class="item-add" action="add.php" method="post">
                 <input type="text" name="itemName" placeholder="Type a new item here." class="input" autocomplete="off" required>
@@ -57,14 +102,14 @@ include "db_conn2.php"; // Using database connection file here
                 <textarea id="description" name="description" placeholder="Enter description" rows="10" cols="30" maxlength="144" class="input" required ></textarea>
                 <select name="urgency" id="urgency" class="input">
                 	<option value="">--- Choose Urgency ---</option>
-                	<option value="red">normal</option>
-                	<option value="green">important</option>
-                	<option value="blue">very important</option>
+                	<option value="normal">normal</option>
+                	<option value="important">important</option>
+                	<option value="very important">very important</option>
+
+                <input type="checkbox" id="done" name="done" value="1" />
                 </select>
 
                 <input type="submit" value="Add" class="submit">
-
-               <input type="checkbox" id="done" name="done" value="1" />
             </form>
 
         </div>
